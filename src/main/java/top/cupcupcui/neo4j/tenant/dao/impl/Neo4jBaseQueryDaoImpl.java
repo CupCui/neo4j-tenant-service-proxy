@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import top.cupcupcui.neo4j.tenant.dao.INeo4jBaseQueryDao;
-import top.cupcupcui.neo4j.tenant.domain.PersonDao;
+import top.cupcupcui.neo4j.tenant.domain.Person;
 import top.cupcupcui.neo4j.tenant.repository.Neo4jBaseQueryRepository;
 
 /**
@@ -20,7 +20,7 @@ public class Neo4jBaseQueryDaoImpl implements INeo4jBaseQueryDao {
 
 	@Override
 	public String getPersonByName(String name) {
-		PersonDao person = neo4jQueryRepo.getPersonByName(name);
+		Person person = neo4jQueryRepo.getPersonByName(name);
 		return JSONObject.toJSONString(person);
 	}
 }
